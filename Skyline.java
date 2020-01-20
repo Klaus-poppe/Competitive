@@ -1,3 +1,21 @@
+/***
+Q.Given a list of building in the form of (left, right, height), return what the skyline should look like. 
+The skyline should be in the form of a list of (x-axis, height), where x-axis is the next point where there is a change 
+in height starting from 0, and height is the new height starting from the x-axis.
+#
+#            2 2 2
+#            2 2 2
+#        1 1 2 2 2 1 1
+#        1 1 2 2 2 1 1
+#        1 1 2 2 2 1 1
+# pos: 1 2 3 4 5 6 7 8 9
+
+Input : [(2, 8, 3), (4, 6, 5)]
+Output: [(2, 3), (4, 5), (7, 3), (9, 0)]
+
+***/
+
+
 import java.util.*;
 import java.io.*;
 
