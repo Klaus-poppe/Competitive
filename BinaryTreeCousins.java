@@ -66,7 +66,7 @@ public static void findCousins(BinaryTree bt, int value,List arr){
     System.out.println("its the root node it has no cousins");
     return;
   }
-    System.out.println(height);
+  
      List cousins = new ArrayList();
      printGivenLevel(bt.root,height,cousins);
      cousins.remove((Integer)value);
