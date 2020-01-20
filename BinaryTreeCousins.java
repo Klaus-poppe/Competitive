@@ -1,5 +1,3 @@
-Ashwin Jawahar Vontivillu
-
 import java.io.*; 
 import java.util.*; 
 
@@ -38,9 +36,9 @@ private BinaryTree createBinaryTree(List arr) {
     return bt;
 }
 
-private static int getHeight(Node current, int value, int height) {
+private static int getHeight(Node current, int value, int height) throws  Exception {
     if (current == null) {
-        return 0;
+        throw new Exception();
     } 
     if (value == current.value) {
         return 1;
@@ -51,22 +49,27 @@ private static int getHeight(Node current, int value, int height) {
     }else{
       height += getHeight(current.right, value,height);
     }
-       return height;
+  
+  return height;
 }
 
 
 public static void findCousins(BinaryTree bt, int value,List arr){
-  int height = getHeight(bt.root, value , 1);
+  int height;
+  try{
+  height = getHeight(bt.root, value , 1);
+  }catch(Exception e){
+    height = 0;
+  }
+  
   if(height == 1){
     System.out.println("its the root node it has no cousins");
+    return;
   }
-   List cousins = new ArrayList();
-  int i;
-  for(i=1;i<arr.size();i++){
-    if((Integer)arr.get(i) != value)
-    if(getHeight(bt.root,(Integer)arr.get(i),1) == height)
-      cousins.add(arr.get(i));
-  } 
+    System.out.println(height);
+     List cousins = new ArrayList();
+     printGivenLevel(bt.root,height,cousins);
+     cousins.remove((Integer)value);
   
   if(cousins.isEmpty())
     System.out.println("No cousins found");
@@ -74,6 +77,21 @@ public static void findCousins(BinaryTree bt, int value,List arr){
   System.out.println(cousins) ; 
   
 }
+
+      static void printGivenLevel (Node root ,int level,List<Integer> arr) 
+    { 
+        if (root == null) 
+            return; 
+
+        if (level == 1 ) 
+            arr.add(root.value); 
+        else if (level > 1) 
+        { 
+            printGivenLevel(root.left, level-1,arr); 
+            printGivenLevel(root.right, level-1,arr); 
+        } 
+
+    } 
 
     public static void main(String[] args) {
       BinaryTree bt = new BinaryTree();
@@ -103,4 +121,6 @@ class Node {
         left = null;
     }
 }
+
+
 
