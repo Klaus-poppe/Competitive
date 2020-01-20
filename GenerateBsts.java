@@ -1,3 +1,21 @@
+/***
+Given a number n, generate all binary search trees that can be constructed with nodes 1 to n.
+
+# Pre-order traversals of binary trees from 1 to n(3).
+# 123
+# 132
+# 213
+# 312
+# 321
+
+#   1      1      2      3      3
+#    \      \    / \    /      /
+#     2      3  1   3  1      2
+#      \    /           \    /
+#       3  2             2  1
+
+***/
+
 import java.io.*;
 import java.util.*;
 
