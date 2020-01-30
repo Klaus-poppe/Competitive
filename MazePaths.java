@@ -1,3 +1,24 @@
+/***
+ * A maze is a matrix where each cell can either be a 0 or 1.
+ * 0 represents and empty cell  and 1 represents a wall.
+ * 
+ * Given a n x m matrix, find the number of ways someone can go
+ * from the top left to the bottom right, assuming you can only
+ * move right or down.
+ * 
+ * Input  : [[0,1,0],[0,0,1],[0,0,0]]
+ *  0 1 0
+ *  0 0 1
+ *  0 0 0
+ * Output : 2 
+ * the two paths that can be taken are
+ * down -> right -> down -> right
+ * down -> down -> right -> right
+ * 
+ * 
+ ***/
+
+
 public class MazePaths{
     int path = 0;
 
